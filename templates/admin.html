@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Admin</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+    <img src="https://kurius.mariam2145.repl.co/logo.png">
+    <h2> Verify the data, Admin </h2>
+    {% for item in data %}
+    
+<form action="/admin" method="POST">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{item.name}}</h5>
+    <p><b>Territory name : </b><span>{{item.territory}}</p></p>
+        <p><b>Languages : </b><span>{{item.language}}</p></p>
+            <p><b>Laws : </b><span>{{item.laws}}</p></p>
+                <p><b>Latitude  : </b><input type="text" value="{{item.lat}}" name="lat" /></p>
+                  <p><b>Latitude  : </b><span>{{item.long}}</p></p>
+    <button type="submit" class="btn btn-primary">Verify</button>
+  </div>
+</div>
+</form>
+{% endfor %}
+
+    </body>
+
+    <style>
+body {
+    padding: 25px;
+}
+img{
+    background:teal;
+}
+h2{
+    padding-top:20px;
+}
+form{
+    padding:20px;
+}
+</style>
+</html>
